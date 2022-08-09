@@ -22,7 +22,6 @@ def gen():
         result_str = ''.join(random.choice(characters) for i in range(22))
         url = f'https://chat.whatsapp.com/invite/{result_str}'
         headers = {'User-Agent': 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36'}
-        #_json={"model": "text-davinci-002", "prompt": f"{prompt}", "temperature": 0, "max_tokens": 250}
         r = httpx.get(url, headers=headers)
         if r.status_code == 200:
             soup = BeautifulSoup(r.text, 'html.parser')
